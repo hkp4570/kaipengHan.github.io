@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/09/18/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>Testing</category>
+      </categories>
+      <tags>
+        <tag>next</tag>
+        <tag>testing</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hooks</title>
+    <url>/2021/09/18/hooks/</url>
+    <content><![CDATA[<p>State Hook<br>State Hook是一个在函数组件中使用的函数（useState），用于在函数组件中使用状态</p>
+<span id="more"></span>
+<h1 id="useState"><a href="#useState" class="headerlink" title="useState"></a>useState</h1><p>函数有一个参数，这个参数的值表示状态的默认值<br>函数的返回值是一个数组，该数组一定包含两项<br>第一项：当前状态的值<br>第二项：改变状态的函数<br>一个函数组件中可以有多个状态，这种做法非常有利于横向切分关注点。</p>
+<p>注意的细节</p>
+<p>useState最好写到函数的起始位置，便于阅读<br>useState严禁出现在代码块（判断、循环）中<br>useState返回的函数（数组的第二项），引用不变（节约内存空间）<br>使用函数改变数据，若数据和之前的数据完全相等（使用Object.is比较），不会导致重新渲染，以达到优化效率的目的。<br>使用函数改变数据，传入的值不会和原来的数据进行合并，而是直接替换。<br>如果要实现强制刷新组件<br>类组件：使用forceUpdate函数<br>函数组件：使用一个空对象的useState<br>如果某些状态之间没有必然的联系，应该分化为不同的状态，而不要合并成一个对象<br>和类组件的状态一样，函数组件中改变状态可能是异步的（在DOM事件中），多个状态变化会合并以提高效率，此时，不能信任之前的状态，而应该使用回调函数的方式改变状态。如果状态变化要使用到之前的状态，尽量传递函数。</p>
+<p>Effect Hook<br>Effect Hook：用于在函数组件中处理副作用</p>
+<p>副作用：</p>
+<p>ajax请求<br>计时器<br>其他异步操作<br>更改真实DOM对象<br>本地存储<br>其他会对外部产生影响的操作<br>函数：useEffect，该函数接收一个函数作为参数，接收的函数就是需要进行副作用操作的函数</p>
+<p>细节</p>
+<p>副作用函数的运行时间点，是在页面完成真实的UI渲染之后。因此它的执行是异步的，并且不会阻塞浏览器<br>与类组件中componentDidMount和componentDidUpdate的区别<br>componentDidMount和componentDidUpdate，更改了真实DOM，但是用户还没有看到UI更新，同步的。<br>useEffect中的副作用函数，更改了真实DOM，并且用户已经看到了UI更新，异步的。<br>每个函数组件中，可以多次使用useEffect，但不要放入判断或循环等代码块中。<br>useEffect中的副作用函数，可以有返回值，返回值必须是一个函数，该函数叫做清理函数<br>该函数运行时间点，在每次运行副作用函数之前<br>首次渲染组件不会运行<br>组件被销毁时一定会运行<br>useEffect函数，可以传递第二个参数<br>第二个参数是一个数组<br>数组中记录该副作用的依赖数据<br>当组件重新渲染后，只有依赖数据与上一次不一样的时，才会执行副作用<br>所以，当传递了依赖数据之后，如果数据没有发生变化<br>副作用函数仅在第一次渲染后运行<br>清理函数仅在卸载组件后运行<br>副作用函数中，如果使用了函数上下文中的变量，则由于闭包的影响，会导致副作用函数中变量不会实时变化。<br>副作用函数在每次注册时，会覆盖掉之前的副作用函数，因此，尽量保持副作用函数稳定，否则控制起来会比较复杂。</p>
+<p>自定义Hook</p>
+<ul>
+<li><p>State Hook： useState Effect Hook：useEffect</p>
+</li>
+<li><p>自定义Hook：将一些常用的、跨越多个组件的Hook功能，抽离出去形成一个函数，该函数就是自定义Hook，自定义Hook，由于其内部需要使用Hook功能，所以它本身也需要按照Hook的规则实现：</p>
+</li>
+<li><p>函数名必须以use开头</p>
+</li>
+<li><p>调用自定义Hook函数时，应该放到顶层<br>例如：</p>
+</li>
+<li><p>很多组件都需要在第一次加载完成后，获取所有学生数据</p>
+</li>
+<li><p>很多组件都需要在第一次加载完成后，启动一个计时器，然后在组件销毁时卸载</p>
+</li>
+<li><p>使用Hook的时候，如果没有严格按照Hook的规则进行，eslint的一个插件（eslint-plugin-react-hooks）会报出警告</p>
+</li>
+</ul>
+<h1 id="contestHook"><a href="#contestHook" class="headerlink" title="contestHook"></a>contestHook</h1><p>用于获取上下文数据</p>
+<h1 id="Callback-Hook"><a href="#Callback-Hook" class="headerlink" title="Callback Hook"></a>Callback Hook</h1><ul>
+<li><p>函数名：useCallback</p>
+</li>
+<li><p>用于得到一个固定引用值的函数，通常用它进行性能优化</p>
+</li>
+</ul>
+<h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback:"></a>useCallback:</h2><ul>
+<li><p>该函数有两个参数：</p>
+</li>
+<li><p>函数，useCallback会固定该函数的引用，只要依赖项没有发生变化，则始终返回之前函数的地址</p>
+</li>
+<li><p>数组，记录依赖项</p>
+</li>
+<li><p>该函数返回：引用相对固定的函数地址</p>
+</li>
+</ul>
+<h1 id="Memo-Hook"><a href="#Memo-Hook" class="headerlink" title="Memo Hook"></a>Memo Hook</h1><ul>
+<li><p>用于保持一些比较稳定的数据，通常用于性能优化</p>
+</li>
+<li><p>如果React元素本身的引用没有发生变化，一定不会重新渲染</p>
+</li>
+</ul>
+<h1 id="Ref-Hook"><a href="#Ref-Hook" class="headerlink" title="Ref Hook"></a>Ref Hook</h1><ul>
+<li><p>useRef函数：</p>
+</li>
+<li><p>一个参数：默认值</p>
+</li>
+<li><p>返回一个固定的对象，{current: 值}</p>
+</li>
+</ul>
+<h1 id="LayoutEffect-Hook"><a href="#LayoutEffect-Hook" class="headerlink" title="LayoutEffect Hook"></a>LayoutEffect Hook</h1><ul>
+<li><p>useEffect：浏览器渲染完成后，用户看到新的渲染结果之后 useLayoutEffectHook：完成了DOM改动，但还没有呈现给用户</p>
+</li>
+<li><p>应该尽量使用useEffect，因为它不会导致渲染阻塞，如果出现了问题，再考虑使用useLayoutEffectHook</p>
+</li>
+</ul>
+<h1 id="DebugValue-Hook"><a href="#DebugValue-Hook" class="headerlink" title="DebugValue Hook"></a>DebugValue Hook</h1><ul>
+<li><p>useDebugValue：用于将自定义Hook的关联数据显示到调试栏</p>
+</li>
+<li><p>如果创建的自定义Hook通用性比较高，可以选择使用useDebugValue方便调试</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>react</tag>
+        <tag>hooks</tag>
+      </tags>
+  </entry>
+</search>
