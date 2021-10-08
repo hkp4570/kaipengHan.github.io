@@ -3,7 +3,7 @@
   <entry>
     <title>hexo搭建博客部署到github主题样式无法加载</title>
     <url>/2021/10/08/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD/</url>
-    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用hexo+NexT主题搭建完成个人博客，部署到github之后，打开发现设置的主题并没有生效。本地打开是正常的。<br><img src="/.io//img.png" alt="img.png"></p>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用hexo+NexT主题搭建完成个人博客，部署到github之后，打开发现设置的主题并没有生效。本地打开是正常的。<br><img src="/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD/img_1.png" alt="img_1.png"></p>
 <span id="more"></span>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>之前看到有文章说是需要修改主题文件夹（/theme/next/source/）下的某个文件，不过新版本的中已经修过过了。如果你是这种问题<a href="https://www.zhihu.com/question/52251404?sort=created">请查看</a>。<br>当然我遇到的问题是配置url错误。请在_config.yml中设置url为你博客的域名。</p>
 ]]></content>
@@ -18,7 +18,7 @@
   <entry>
     <title>使用hexo快速搭建个人博客</title>
     <url>/2021/09/22/%E4%BD%BF%E7%94%A8hexo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>假设你已经有github账号，并且会基本操作。新建名称<usernmae>.github.io的仓库，设置为公共，不要私有。</usernmae></p>
+    <content><![CDATA[<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>假设你已经有github账号，并且会基本操作。新建名称<usernmae>.github.io的仓库，设置为公共，不要私有。</p>
 <span id="more"></span>
 
 <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ol>

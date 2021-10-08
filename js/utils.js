@@ -9,7 +9,7 @@ HTMLElement.prototype.wrap = function(wrapper) {
 NexT.utils = {
 
   /**
-   * Wrap images with fancybox.
+   * Wrap hexo搭建博客部署到github主题样式无法加载 with fancybox.
    */
   wrapImageWithFancyBox: function() {
     document.querySelectorAll('.post-body :not(a) > img, .post-body > img').forEach(element => {
