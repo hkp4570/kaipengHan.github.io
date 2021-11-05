@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>react中引入rc-tree和rc-tree-select库之后样式覆盖问题</title>
+    <url>/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在项目中同时引入rc-tree和rc-tree-select库之后，同时在全局样式文件global.less中分别引入两个库的样式文件</p>
+<span id="more"></span>
+<p><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/1.png" alt="文件引入"><br>这时我们打开页面之后会发现rc-tree的样式没有正常显示，而且无法展开树结构<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/2.png" alt="不正常显示"><br>可是下面这样才是正常显示<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/3.png" alt="正常显示"><br>而此时rc-tree-select组件库却能够正常显示<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/4.png" alt="正常显示"><br>当我们调整全局样式文件中两个库的样式引入顺序，会发现谁后引入谁就可以正常显示。猜测可能是发生了样式覆盖</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/5.png" alt="解决"><br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/6.png" alt="解决"><br>同样也可以在使用rc-tree-select的组件中这样做</p>
+]]></content>
+      <categories>
+        <category>解决方案</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+        <tag>rc-tree</tag>
+        <tag>rc-tree-select</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用hexo快速搭建个人博客</title>
     <url>/2021/09/22/%E4%BD%BF%E7%94%A8hexo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
-    <content><![CDATA[<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>假设你已经有github账号，并且会基本操作。新建名称<usernmae>.github.io的仓库，设置为公共，不要私有。</p>
+    <content><![CDATA[<h2 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h2><p>假设你已经有github账号，并且会基本操作。新建名称<usernmae>.github.io的仓库，设置为公共，不要私有。</usernmae></p>
 <span id="more"></span>
 
 <h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ol>

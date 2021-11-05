@@ -20,19 +20,29 @@
     var CONFIG = {"hostname":"kaipenghan.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="我   如果在其他地方看到Colourful、屡次拒绝田馥甄的话可能就是我了 95后的新生代农民工 目前在北京搬砖 励志成为全栈 很厉害的那种 电视剧（其实看的也不多-北京青年…）、看电影（恐怖-潜伏系列…）、看书（三体-总感觉写的是真的）、游戏（qq飞车-以前最爱 英雄联盟-很菜）  &amp;#99;&amp;#111;&amp;#108;&amp;#x6f;&amp;#117;&amp;#x72;&amp;#x66;&amp;#x75;&amp;#108;&amp;#">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="https://kaipenghan.github.io/about/index.html">
+  <meta name="description" content="问题在项目中同时引入rc-tree和rc-tree-select库之后，同时在全局样式文件global.less中分别引入两个库的样式文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react中引入rc-tree和rc-tree-select库之后样式覆盖问题">
+<meta property="og:url" content="https://kaipenghan.github.io/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Colourful的博客">
-<meta property="og:description" content="我   如果在其他地方看到Colourful、屡次拒绝田馥甄的话可能就是我了 95后的新生代农民工 目前在北京搬砖 励志成为全栈 很厉害的那种 电视剧（其实看的也不多-北京青年…）、看电影（恐怖-潜伏系列…）、看书（三体-总感觉写的是真的）、游戏（qq飞车-以前最爱 英雄联盟-很菜）  &amp;#99;&amp;#111;&amp;#108;&amp;#x6f;&amp;#117;&amp;#x72;&amp;#x66;&amp;#x75;&amp;#108;&amp;#">
+<meta property="og:description" content="问题在项目中同时引入rc-tree和rc-tree-select库之后，同时在全局样式文件global.less中分别引入两个库的样式文件">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-18T10:05:33.000Z">
-<meta property="article:modified_time" content="2021-10-08T08:57:50.291Z">
+<meta property="og:image" content="https://kaipenghan.github.io/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/1.png">
+<meta property="og:image" content="https://kaipenghan.github.io/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/2.png">
+<meta property="og:image" content="https://kaipenghan.github.io/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/3.png">
+<meta property="og:image" content="https://kaipenghan.github.io/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/4.png">
+<meta property="og:image" content="https://kaipenghan.github.io/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/5.png">
+<meta property="og:image" content="https://kaipenghan.github.io/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/6.png">
+<meta property="article:published_time" content="2021-11-05T05:40:05.000Z">
+<meta property="article:modified_time" content="2021-11-05T06:10:12.545Z">
 <meta property="article:author" content="Colourful">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="rc-tree">
+<meta property="article:tag" content="rc-tree-select">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kaipenghan.github.io/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/1.png">
 
-<link rel="canonical" href="https://kaipenghan.github.io/about/">
+<link rel="canonical" href="https://kaipenghan.github.io/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -40,13 +50,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>关于 | Colourful的博客
-</title>
+  <title>react中引入rc-tree和rc-tree-select库之后样式覆盖问题 | Colourful的博客</title>
   
 
 
@@ -163,62 +172,97 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://kaipenghan.github.io/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E9%83%A8%E7%BD%B2%E5%88%B0github%E4%B8%BB%E9%A2%98%E6%A0%B7%E5%BC%8F%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD/avatar.gif">
+      <meta itemprop="name" content="Colourful">
+      <meta itemprop="description" content="保持饥饿 保持愚蠢">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Colourful的博客">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          react中引入rc-tree和rc-tree-select库之后样式覆盖问题
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">关于
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2021-11-05 13:40:05 / 修改时间：14:10:12" itemprop="dateCreated datePublished" datetime="2021-11-05T13:40:05+08:00">2021-11-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" itemprop="url" rel="index"><span itemprop="name">解决方案</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在项目中同时引入rc-tree和rc-tree-select库之后，同时在全局样式文件global.less中分别引入两个库的样式文件</p>
+<span id="more"></span>
+<p><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/1.png" alt="文件引入"><br>这时我们打开页面之后会发现rc-tree的样式没有正常显示，而且无法展开树结构<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/2.png" alt="不正常显示"><br>可是下面这样才是正常显示<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/3.png" alt="正常显示"><br>而此时rc-tree-select组件库却能够正常显示<br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/4.png" alt="正常显示"><br>当我们调整全局样式文件中两个库的样式引入顺序，会发现谁后引入谁就可以正常显示。猜测可能是发生了样式覆盖</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/5.png" alt="解决"><br><img src="/2021/11/05/react%E4%B8%AD%E5%BC%95%E5%85%A5rc-tree%E5%92%8Crc-tree-select%E5%BA%93%E4%B9%8B%E5%90%8E%E6%A0%B7%E5%BC%8F%E8%A6%86%E7%9B%96%E9%97%AE%E9%A2%98/6.png" alt="解决"><br>同样也可以在使用rc-tree-select的组件中这样做</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/react/" rel="tag"># react</a>
+              <a href="/tags/rc-tree/" rel="tag"># rc-tree</a>
+              <a href="/tags/rc-tree-select/" rel="tag"># rc-tree-select</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/22/%E4%BD%BF%E7%94%A8hexo%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="prev" title="使用hexo快速搭建个人博客">
+      <i class="fa fa-chevron-left"></i> 使用hexo快速搭建个人博客
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <blockquote>
-<p>我</p>
-</blockquote>
-<ul>
-<li>如果在其他地方看到Colourful、屡次拒绝田馥甄的话可能就是我了</li>
-<li>95后的新生代农民工 目前在北京搬砖 励志成为全栈 很厉害的那种</li>
-<li>电视剧（其实看的也不多-北京青年…）、看电影（恐怖-潜伏系列…）、看书（三体-总感觉写的是真的）、游戏（qq飞车-以前最爱 英雄联盟-很菜）</li>
-</ul>
-<p><a href="mailto:&#99;&#111;&#108;&#x6f;&#117;&#x72;&#x66;&#x75;&#108;&#x34;&#x35;&#55;&#48;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;">&#99;&#111;&#108;&#x6f;&#117;&#x72;&#x66;&#x75;&#108;&#x34;&#x35;&#55;&#48;&#x40;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a></p>
-<p><a href="mailto:&#x73;&#x78;&#x68;&#x6b;&#112;&#x31;&#54;&#51;&#x40;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;">&#x73;&#x78;&#x68;&#x6b;&#112;&#x31;&#54;&#51;&#x40;&#49;&#x36;&#51;&#46;&#99;&#x6f;&#109;</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/kaipengHan">https://github.com/kaipengHan</a></p>
-<hr>
-<blockquote>
-<p>博客</p>
-</blockquote>
-<ul>
-<li>搬砖两年左右 一直也没机会搞一个博客 主要是懒 2021年终于在github上免费搞了这个博客网站</li>
-<li>本博客记录开发中遇到问题的解决方案 主要是怕自己以后忘了</li>
-</ul>
-
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
@@ -269,6 +313,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3"><span class="nav-number">2.</span> <span class="nav-text">解决</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
